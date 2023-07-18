@@ -33,7 +33,8 @@ if (value) {
 }
 
 // switch
-let day = "Wednesday";
+// let day = prompt('Give me a day of the week');
+let day = "Monday";
 
 if (day === "Monday") {
   console.log("It's monday");
@@ -59,3 +60,46 @@ switch (day) {
     console.log("It is neither Monday, Tuesday nor Wednesday switch");
     break;
 }
+
+/*
+Ejercicio: Conversor de temperaturas
+
+Escribe un programa que solicite al usuario una temperatura y una escala de temperatura (Celsius o Kelvin) a la que quiera cambiar esa temperatura.
+
+El programa hace 2 preguntas:
+"Ingresa la temperatura:"
+"Ingresa la escala a la que quieras cambiar tu temperatura (C o K):"
+
+Casos para probar:
+
+Ingresa la temperatura 🌡: 0
+Ingresa la escala a la que quieras cambiar tu temperatura (C o K): K
+
+La temperatura en Kelvin es: 273.15K
+
+Ingresa la temperatura 🌡: 283.15
+Ingresa la escala a la que quieras cambiar tu temperatura (C o K): C
+
+La temperatura en Celsius es: 273.15°C
+
+
+*/
+let temperatura = parseFloat(prompt("Ingresa la temperatura 🌡:")); // 10
+let escala = prompt("Ingresa la escala a la que quieras cambiar tu temperatura (C o K):"); // C
+/*
+switch (escala) {
+  case "C":
+      console.log('Temperature = ', temperatura - 273.15)
+      break;
+  case "K": 
+      console.log("Temperatura = ", temperatura + 273.15)
+      break;
+  default:
+      console.log("Pon un valor correcto de escala");
+      break;
+}
+*/
+
+temperatura = escala === "C" ? temperatura - 273.15 : temperatura + 273.15;
+
+console.log(temperatura);
