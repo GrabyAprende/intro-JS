@@ -162,3 +162,82 @@ contador2.increment();
 contador2.increment();
 console.log('contador1', contador1.count());
 console.log('contador2', contador2.count());
+
+//-------EJERCICIO--------
+/*Crear un closure de una calculadora que pueda hacer las siguientes operaciones guardando el resultado
+    
+const miCalculadora = calculadora();
+
+console.log(miCalculadora.sumar(5));     // Debería imprimir 5
+console.log(miCalculadora.restar(2));    // Debería imprimir 3
+console.log(miCalculadora.multiplicar(4));   // Debería imprimir 12
+console.log(miCalculadora.dividir(2));   // Debería imprimir 6
+console.log(miCalculadora.sumar(10));    // Debería imprimir 16*/
+console.log("--ejemplo ejercicio--")
+function calculadora() {
+    let resultado = 0;
+    return {
+        sumar: function (numero) {
+            resultado += numero;
+            return resultado;
+        },
+        restar: function (numero) {
+            resultado -= numero;
+            return resultado;
+        },
+        multiplicar: function (numero) {
+            resultado *= numero;
+            return resultado;
+        },
+        dividir: function (numero) {
+            resultado /= numero;
+            return resultado;
+        },
+    };
+}
+const miCalculadora = calculadora();
+
+console.log(miCalculadora.sumar(5));     // Debería imprimir 5
+console.log(miCalculadora.restar(2));    // Debería imprimir 3
+console.log(miCalculadora.multiplicar(4));   // Debería imprimir 12
+console.log(miCalculadora.dividir(2));   // Debería imprimir 6
+console.log(miCalculadora.sumar(10));    // Debería imprimir 16
+
+//-----otro ejemplo mas simplificado----------
+console.log("--ejemplo Simplificado del ejercicio--")
+const calculadora1 = () => {
+    let resultado = 0;
+
+    return {
+        sumar: (numero) => resultado += numero,
+        restar: (numero) => resultado -= numero,
+        multiplicar: (numero) => resultado *= numero,
+        dividir: (numero) => resultado /= numero,
+    };
+};
+
+const miCalculadora1 = calculadora1();
+
+console.log(miCalculadora1.sumar(5));     // Debería imprimir 5
+console.log(miCalculadora1.restar(2));    // Debería imprimir 3
+console.log(miCalculadora1.multiplicar(4));   // Debería imprimir 12
+console.log(miCalculadora1.dividir(2));   // Debería imprimir 6
+console.log(miCalculadora1.sumar(10));    // Debería imprimir 16
+
+//PASAR UNA FUNCION COMO PARAMETRO
+console.log("--------realizarOperacion-------")
+const realizarOperacion = (num1, num2,  operacion) => {
+
+};
+const suma = (a, b)  => a+b;
+const resta = (a, b) => a-b;
+
+let resultadoSuma = realizarOperacion(1,2,suma); //3
+let resultadoResta = realizarOperacion(1,2,resta);  //3
+
+console.log("--------realizarOperacion-2------")
+let resultadoMensaje = realizarOperacion(15, 20, function(num1, num2){
+    return `${num1} - ${num2}`;
+});
+console.log(resultadoMensaje);
+
